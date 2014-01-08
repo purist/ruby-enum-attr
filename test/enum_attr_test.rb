@@ -75,7 +75,6 @@ class EnumAttrTest < Test::Unit::TestCase
   end
 
   def test_int_value_can_be_obtained
-    c = ClassA.new
-    assert_equal 0, c.enum_int_val(:prop1, :foo)
+    assert_equal 0, ClassA.enum_val(:prop1, :foo)
   end
 end

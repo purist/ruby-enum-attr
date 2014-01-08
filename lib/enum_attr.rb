@@ -8,14 +8,14 @@ module EnumAttr
     self.class.__enum_map
   end
 
-  def enum_int_val attr_name, enum_name
-    enum_map[attr_name.to_sym][enum_name.to_sym]
-  end
-
   module ClassMethods
    
     def __enum_map
       instance_variable_get '@__ENUM_ATTR_MAP'
+    end
+
+    def enum_val attr_name, enum_name
+      __enum_map[attr_name.to_sym][enum_name.to_sym]
     end
 
     def enum_attr(attr_name, enum_name)
