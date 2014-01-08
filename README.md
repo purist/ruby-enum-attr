@@ -30,7 +30,7 @@ Include the module...
     p.instance_variable_get "@my_property"
     => 1
 
-It gracefully handled attributes defined by the super class.
+And it handles attributes defined by the super class.
 
 Authors
 ===========
