@@ -73,4 +73,9 @@ class EnumAttrTest < Test::Unit::TestCase
     c.prop1 
     assert_equal 2, c.instance_variable_get( "@attribute_in_super_class" )
   end
+
+  def test_int_value_can_be_obtained
+    c = ClassA.new
+    assert_equal 0, c.enum_int_val(:prop1, :foo)
+  end
 end

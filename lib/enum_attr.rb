@@ -4,6 +4,14 @@ module EnumAttr
     base.extend ClassMethods
   end
 
+  def enum_map 
+    self.class.__enum_map
+  end
+
+  def enum_int_val attr_name, enum_name
+    enum_map[attr_name.to_sym][enum_name.to_sym]
+  end
+
   module ClassMethods
    
     def __enum_map
