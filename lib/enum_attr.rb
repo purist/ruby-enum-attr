@@ -9,7 +9,13 @@ module EnumAttr
   end
 
   module ClassMethods
-   
+    
+    def enums attr_name
+      k = __enum_map[attr_name.to_sym].keys
+      k.delete :__seq
+      k
+    end
+
     def __enum_map
       instance_variable_get '@__ENUM_ATTR_MAP'
     end

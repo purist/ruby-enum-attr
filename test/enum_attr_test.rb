@@ -77,4 +77,8 @@ class EnumAttrTest < Test::Unit::TestCase
   def test_int_value_can_be_obtained
     assert_equal 0, ClassA.enum_val(:prop1, :foo)
   end
+
+  def test_can_retrieve_enums
+    assert_equal [:foo,:bar], ClassA.enums(:prop1)
+  end
 end
